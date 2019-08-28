@@ -1,0 +1,56 @@
+/*============= Extra small devices (portrait phones, less than 576px) =================*/
+@media (max-width: 575.98px) {
+    .navbar-light .navbar-toggler {
+        color: #000;
+        border: none;
+        z-index: 999999;
+        font-size: 25px;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:hover {
+        outline: none;
+    }
+
+    .navbar-1 {
+        background: #611f9a;
+    }
+
+    .navbar-light .navbar-nav .nav-link::before {
+        left: 33px;
+        top: 90%;
+    }
+
+    .navbar-collapse {
+        padding-top: 20px;
+    }
+
+    #banner-area {
+        padding-top: 130px;
+    }
+
+    .banner-item h2 {
+        font-size: 17px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    #menu-area {
+        top: 187%;
+    }
+
+    #ourwork-area {
+        padding-top: 300px;
+    }
+
+    .work-item {
+        margin-bottom: 100px;
+    }
+
+}
+
+/*============= Small devices (landscape phones, 576px and up) ===============*/
+@media (min-width: 576px) and (max-width: 767.98px) {}
+
+/*=============== Medium devices (tablets, 768px and up) ===============*/
+@media (min-width: 768px) and (max-width: 991.98px) {}

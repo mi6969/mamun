@@ -1,0 +1,650 @@
+/*====================== custom css start ========================*/
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+/*====================== custom css stop ========================*/
+
+/*====================== fonts start ======================*/
+@font-face {
+    src: url(../fonts/Hind-Bold.ttf);
+    font-family: HB;
+}
+
+@font-face {
+    src: url(../fonts/Hind-SemiBold.ttf);
+    font-family: hsb;
+}
+
+@font-face {
+    src: url(../fonts/Hind-Medium.ttf);
+    font-family: hm;
+}
+
+
+@font-face {
+    src: url(../fonts/Hind-Light.ttf);
+    font-family: hlt;
+}
+
+@font-face {
+    src: url(../fonts/Hind-Regular.ttf);
+    font-family: hr;
+}
+
+
+@font-face {
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-family: pr;
+}
+
+/*====================== fonts stop ======================*/
+
+/*------------- @mixin ------------*/
+@mixin transition($value) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}
+
+@mixin transform($a) {
+    -webkit-transform: $a;
+    -moz-transform: $a;
+    -ms-transform: $a;
+    -o-transform: $a;
+    transform: $a;
+}
+
+/*=============== navbar css start ==============*/
+
+.navbar-1 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(57, 24, 106, 0.2);
+        @include transform(translate(0, 0));
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.1);
+        @include transform(translate(0, 0));
+    }
+}
+
+.navbar-brand {
+    padding-top: 0;
+    z-index: 999;
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            font-size: 14px;
+            font-family: HB;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+            margin-right: 23px;
+
+            &:hover,
+            &:focus {
+                color: #fff;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 65px;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.2);
+                left: 50%;
+                top: 90%;
+                opacity: 0;
+                @include transform(translate(-50%, -90%));
+
+            }
+
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+
+    .form-inline {
+        .btn {
+            padding: 16px 29px;
+            font-size: 13px;
+            font-family: HB;
+            color: #fff;
+            border: 1px solid #f21692;
+            border-radius: 50px;
+            text-transform: uppercase;
+            z-index: 999;
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background: #f21692;
+                color: #fff;
+            }
+        }
+    }
+
+}
+
+/*======================== banner-area css start ====================*/
+#banner-area {
+    background: url(../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 160px;
+    padding-bottom: 180px;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.banner-item {
+    img {
+        padding-bottom: 30px;
+    }
+
+    h2 {
+        font-size: 23px;
+        font-family: pr;
+        color: #fff;
+        margin-bottom: 0;
+        line-height: 35px;
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 97%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            left: 50%;
+            top: 0;
+            @include transform(translate(-50%, 0));
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 97%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            left: 50%;
+            bottom: 0;
+            @include transform(translate(-50%, 0));
+        }
+
+    }
+}
+
+/*======================== menu-area css start =========================*/
+#menu-area {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: #fff;
+    position: absolute;
+    width: 90%;
+    top: 100%;
+
+    left: 50%;
+    @include transform(translate(-50%, -100%));
+    box-shadow: 0 0 20px 0 rgba(62, 28, 131, 0.1);
+}
+
+.menu-1 {
+    .nav {
+        .nav-item {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            .nav-link {
+                font-size: 13px;
+                font-family: HB;
+                color: #333a49;
+                text-transform: uppercase;
+                line-height: 50px;
+                letter-spacing: 1px;
+                padding: 0 23px;
+                @include transition(all linear .3s);
+                border-radius: 50px;
+
+                &.active {
+                    background: #f21692;
+                    color: #fff;
+
+                    &:hover {
+                        background: #f21692;
+                        color: #fff;
+                    }
+                }
+
+                &:hover {
+                    background-color: #faf9fd;
+                    color: #f21692;
+                    border-radius: 50px;
+                }
+            }
+        }
+    }
+}
+
+/*===================== ourwork-area css start ====================*/
+#ourwork-area {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.work-item {
+    margin-bottom: 50px;
+
+    .work-p1 {
+        h3 {
+            font-size: 22px;
+            font-family: hsb;
+            color: #333a49;
+            margin-bottom: 0;
+            padding-bottom: 25px;
+
+            span {
+                font-size: 22px;
+                font-family: hlt;
+                color: #9194a6;
+            }
+        }
+    }
+
+    .work-p2 {
+        padding-bottom: 30px;
+
+        .nav {
+            .nav-item {
+                .nav-link {
+                    font-size: 13px;
+                    font-family: HB;
+                    color: #6033c2;
+                    display: block;
+                    padding: 0 20px;
+                    height: 40px;
+                    line-height: 40px;
+                    border: 1px solid #dcd8e6;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        background-color: #f21692;
+                        border-color: #f21692;
+                        color: #fff;
+                    }
+                }
+
+                .coming {
+                    background: #bfc1d2;
+                    color: #fff;
+                    border: 1px solid #bfc1d2;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #bfc1d2;
+                        color: #fff;
+                        border: 1px solid #bfc1d2;
+                    }
+                }
+            }
+
+            .nav-item:nth-of-type(1) {
+                .nav-link {
+                    border-top-left-radius: 50px;
+                    border-bottom-left-radius: 50px;
+                }
+            }
+
+            .nav-item:nth-of-type(3) {
+                .nav-link {
+                    border-top-right-radius: 50px;
+                    border-bottom-right-radius: 50px;
+                }
+            }
+
+        }
+    }
+
+    .work-p3 {
+        position: relative;
+
+        img {
+            position: relative;
+            border-radius: 15px;
+            z-index: 999;
+            padding: 10px;
+        }
+
+        .work-p3-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 26px 5px rgba(129, 122, 161, 0.07);
+        }
+    }
+
+    .disable-b {
+        padding: 10px 20px;
+        background: #bfc1d2;
+        border: 1px solid #bfc1d2;
+        border-radius: 50px;
+        color: #ffffff;
+        font-size: 13px;
+        font-family: HB;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &:hover {
+            background: #b0b2c7;
+            border-color: #b0b2c7;
+        }
+    }
+}
+
+.coming {
+    background: #bfc1d2;
+    color: #fff;
+    border: 1px solid #bfc1d2;
+}
+
+.work-bottom {
+    padding-top: 73px;
+
+    h3 {
+        font-size: 1.75rem;
+        font-family: hsb;
+        color: #9194a6;
+
+    }
+}
+
+/*==================== customer-reply-area css start =====================*/
+#customer-reply-area {
+    background: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    background-attachment: fixed;
+}
+
+.customer-reply {
+    padding: 0 106px;
+
+    .p-area {
+        padding: 48px 40px;
+        background: url(../images/blockquote.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        p {
+            font-size: 20px;
+            font-family: hr;
+            color: #f1ebfb;
+            line-height: 34px;
+            margin-bottom: 0;
+
+        }
+    }
+
+    h5 {
+        font-size: 18px;
+        font-family: hlt;
+        color: #fff;
+        padding-left: 107px;
+
+        span {
+            font-size: 20px;
+            font-family: hsb;
+            color: #fff;
+        }
+    }
+
+}
+
+/*===================== product-area css start ======================*/
+#product-area {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.product {
+    box-shadow: 0 0 60px 10px rgba(220, 220, 220, 0.3);
+
+    .product-item {
+        border-left: 1px solid #f1f2f3;
+        border-bottom: 1px solid #f1f2f3;
+        padding-left: 30px;
+        padding-top: 40px;
+        padding-bottom: 60px;
+
+        .product-img {
+            i {
+                background: linear-gradient(#b245df, #336dea);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -ms-background-clip: text;
+                -o-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-text-fill-color: transparent;
+                -ms-text-fill-color: transparent;
+                -o-text-fill-color: transparent;
+                text-fill-color: transparent;
+                font-size: 50px;
+            }
+        }
+
+
+        .product-details {
+            padding-top: 20px;
+
+            h4 {
+                font-size: 20px;
+                font-family: hm;
+                color: #333a49;
+            }
+
+            p {
+                font-size: 16px;
+                font-family: hlt;
+                color: #858c90;
+                line-height: 23px;
+                padding-right: 10px;
+            }
+        }
+    }
+
+}
+
+/*===================== purchase-area css start =====================*/
+#purchase-area {
+    background: url(../images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 120px;
+    padding-bottom: 100px;
+    background-attachment: fixed;
+}
+.purchase {
+    h3 {
+        font-size: 26px;
+        font-family: pr;
+        color: #fff;
+        padding-bottom: 50px;
+    }
+    
+    .btn {
+        font-size: 15px;
+        font-family: HB;
+        color: #fff;
+        text-transform: uppercase;
+        background: #f21692;
+        padding: 15px 40px;
+        border-radius: 50px;
+        
+        &:hover {
+            background: #e30482;
+        }
+        
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+/*==================== footer-area css start =======================*/
+#footer-area {
+    padding-top: 95px;
+    padding-bottom: 100px;
+}
+
+.footer {
+    h3 {
+        font-size: 28px;
+        font-family: hsb;
+        color: #601DD6;
+        text-transform: uppercase;
+        padding-bottom: 34px;
+        
+        span {
+            color: #F21692;
+        }
+    }
+    
+    form {
+        position: relative;
+        .form-group {
+            
+            display: inline-block;
+            .form-control {
+                border: 1px solid #E8D6FC;
+                font-size: 17px;
+                font-family: hlt;
+                color: #858c90;
+                padding: 28px;
+                padding-left: 35px;
+                width: 500px;
+                border-radius: 50px;
+                margin: 0 auto;
+                display: inline-block;
+                
+                &:focus {
+                    border-color: #E8D6FC;
+                    box-shadow: none;
+                }
+            }
+        }
+        
+        .btn {
+            font-size: 15px;
+            font-family: HB;
+            color: #fff;
+            background: #f21692;
+            text-transform: uppercase;
+            border-color: #f21692;
+            padding: 10px 30px;
+            border-radius: 50px;
+            position: absolute;
+            right: 163px;
+            top: 10px;
+            @include transform(translate(-150px, -3px));
+            
+            &:hover, &:focus, &:active {
+                background: #e30482;
+            }
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+    
+    .nav {
+        padding-top: 47px;
+        .nav-item {
+            .nav-link {
+                padding: 0;
+                i {
+                    font-size: 24px;
+                    margin-left: 20px;
+                    margin-right: 20px
+                }
+                i.fab.fa-twitter {
+                    color: #1da1f2;
+                }
+                i.fab.fa-facebook-f {
+                    color: #3b5998;
+                }
+                i.fab.fa-dribbble {
+                    color: #ea4c89;
+                }
+                i.fab.fa-envira {
+                    color: #82b541;
+                }
+            }
+        }
+    }
+}
